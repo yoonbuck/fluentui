@@ -3,6 +3,30 @@ import { IRefObject, IBaseProps, ISize } from 'office-ui-fabric-react/lib/Utilit
 import { TilesList } from './TilesList';
 import { IFocusZone } from 'office-ui-fabric-react/lib/FocusZone';
 import { IListProps } from 'office-ui-fabric-react/lib/List';
+import { IRenderFunction } from '@uifabric/utilities';
+
+export interface ITilesGridItemCellProps<TItem> {
+  item: TItem;
+  finalSize: {
+    width: number;
+    height: number;
+  };
+  position: {
+    column: number;
+  };
+}
+
+export interface ITilesListRowProps<TItem> {
+  cellElements: JSX.Element[];
+  divProps: React.HTMLAttributes<HTMLDivElement>;
+}
+
+export interface ITilesListRootProps<TItem> {
+  surfaceElement: JSX.Element | null;
+  divProps: React.HTMLAttributes<HTMLDivElement>;
+  rowCount: number;
+  columnCount: number;
+}
 
 export interface ITilesGridItem<TItem> {
   /**
@@ -27,7 +51,9 @@ export interface ITilesGridItem<TItem> {
    * Invoked to render the virtual DOM for the item.
    * This content will be rendered inside the cell allocated for the item.
    */
-  onRender: (content: TItem, finalSize?: ISize) => React.ReactNode;
+  onRender?: (content: TItem, finalSize?: ISize) => React.ReactNode;
+
+  onRenderCell?: (props: ITilesGridItemCellProps<TItem>) => JSX.Element | null;
 }
 
 export const enum TilesGridMode {
@@ -131,4 +157,8 @@ export interface ITilesListProps<TItem>
    * props to pass through to the underlying List
    */
   listProps?: Partial<IListProps>;
+
+  onRenderRow?: IRenderFunction<ITilesListRowProps<TItem>>;
+
+  onRenderRoot?: IRenderFunction<ITilesListRootProps<TItem>>;
 }
