@@ -1,6 +1,13 @@
 # Change Log - @uifabric/fabric-website
 
-This log was last generated on Wed, 10 Mar 2021 22:38:42 GMT and should not be manually modified.
+This log was last generated on Fri, 02 Apr 2021 22:46:16 GMT and should not be manually modified.
+
+## 5.9.0
+Fri, 02 Apr 2021 22:46:16 GMT
+
+### Minor changes
+
+- Use shared website setup package and add version switcher
 
 ## 5.8.8
 Wed, 10 Mar 2021 22:38:42 GMT

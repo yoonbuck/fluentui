@@ -2,6 +2,20 @@
   "name": "@uifabric/fabric-website",
   "entries": [
     {
+      "version": "5.9.0",
+      "tag": "@uifabric/fabric-website_v5.9.0",
+      "date": "Fri, 02 Apr 2021 22:46:16 GMT",
+      "comments": {
+        "minor": [
+          {
+            "author": "Elizabeth Craig <elcraig@microsoft.com>",
+            "commit": "c52ad2a83e719be29c97e9661d6320b5d7b44491",
+            "comment": "Use shared website setup package and add version switcher"
+          }
+        ]
+      }
+    },
+    {
       "version": "5.8.8",
       "tag": "@uifabric/fabric-website_v5.8.8",
       "date": "Wed, 10 Mar 2021 22:38:42 GMT",
