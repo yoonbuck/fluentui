@@ -31,6 +31,9 @@ variables:
     value: true
   - name: nightlyReleaseDate # used by nightly built docsite to setup codesandbox correctly
     value: empty
+  - group: InfoSec-SecurityResults
+  - name: tags
+    value: production,externalfacing
 
   # below are variables configurable at queue time, so they cannot appear in yml file
   # - name: publishDocsiteOnly # set it to true to only run Job_build_publish_doc
@@ -43,7 +46,10 @@ variables:
 pool: '1ES-Host-Ubuntu'
 
 jobs:
+  - template: .devops/templates/compliance-job.yml
+
   - job: Job_build_publish
+    dependsOn: Compliance
     workspace:
       clean: all
     displayName: Build and Release Fluent Packages
