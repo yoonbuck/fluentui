@@ -1,13 +1,13 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "target": "ES2019",
+    "target": "es5",
     "outDir": "lib",
     "module": "commonjs",
     "jsx": "react",
     "experimentalDecorators": true,
     "preserveConstEnums": true,
-    "lib": ["ES2019", "DOM"],
+    "lib": ["ES2015", "DOM"],
     "types": ["webpack-env"]
   },
   "include": ["src"]

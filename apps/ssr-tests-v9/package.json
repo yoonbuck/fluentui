@@ -15,11 +15,10 @@
     "storybook": "start-storybook",
     "test": "jest --passWithNoTests",
     "type-check": "tsc -b tsconfig.json",
-    "test-ssr": "test-ssr \"./src/stories/**/*.stories.tsx\""
+    "test-ssr": "test-ssr \"./stories/**/*.stories.tsx\""
   },
   "dependencies": {
-    "@fluentui/react-components": "*",
-    "@fluentui/react-utilities": "*"
+    "@fluentui/react-components": "^9.25.0"
   },
   "devDependencies": {
     "@fluentui/eslint-plugin": "*",
